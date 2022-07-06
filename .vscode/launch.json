@@ -1,0 +1,24 @@
+{
+	"configurations": [
+		{
+			"name": "Launch",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${fileDirname}/${fileBasenameNoExtension}",
+			"args": [
+				"mbrot",
+			],
+			"environment": [
+				{
+					"name": "config",
+					"value": "Debug"
+				}
+			],
+			"externalConsole": false,
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			"MIMode": "lldb",
+			"preLaunchTask": "C/C++: gcc build active file"
+		}
+	]
+}
