@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 18:24:38 by smokashi          #+#    #+#             */
-/*   Updated: 2022/07/06 18:28:10 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/07/07 12:23:06 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,6 @@ int	key_hook(int code, t_data *img)
 
 int	mouse_hook(int code, int x, int y, t_data *img)
 {
-	float	b4zoomx;
-	float	b4zoomy;
-
 	if (code == 4)
 		img->zoomscale = 1.2;
 	else if (code == 5)
