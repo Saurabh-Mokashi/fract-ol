@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 17:36:01 by smokashi          #+#    #+#             */
-/*   Updated: 2022/07/07 12:33:18 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/07/07 18:10:35 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	bship_plot(t_data *img, int px, int py, float tempx)
 		draw(img, px, py, count);
 }
 
-void	bship(t_data	*img, int px, int py)
+void	bship(t_data *img, int px, int py)
 {
 	float	tempx;
 

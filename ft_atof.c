@@ -6,26 +6,29 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 17:31:22 by smokashi          #+#    #+#             */
-/*   Updated: 2022/07/06 18:11:15 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/07/07 18:11:22 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractal.h"
 
-double	fn(int cnt)
+double	temp(char *s, int i)
 {
-	int		ret;
+	double	ans;
+	int		ten;
 
-	ret = 1;
-	while (cnt > 0)
+	ans = 0.0;
+	ten = 1;
+	while (s[i] >= '0' && s[i] <= '9')
 	{
-		ret = ret * 10;
-		cnt--;
+		ans += (s[i] - '0') / pow(10, ten);
+		i++;
+		ten++;
 	}
-	return (ret);
+	return (ans);
 }
 
-float	atof_continue(char *s, int i, int sign)
+double	atof_continue(char *s, int i, int sign)
 {
 	float	ret;
 	int		place;
@@ -37,17 +40,15 @@ float	atof_continue(char *s, int i, int sign)
 		if (s[i] >= '0' && s[i] <= '9')
 			ret = ret * 10 + (s[i] - '0');
 		else if (s[i] == '.')
-			place++;
-		if (place > 0)
-			place++;
+			break ;
 		i++;
 	}
-	if (place)
-		return (sign * (ret / fn(place - 2)));
+	if (s[i] == '.')
+		ret += temp(s, i + 1);
 	return (sign * ret);
 }
 
-float	ft_atof(char *s)
+double	ft_atof(char *s)
 {
 	int		sign;
 	int		i;

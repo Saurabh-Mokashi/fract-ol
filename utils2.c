@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 17:54:08 by smokashi          #+#    #+#             */
-/*   Updated: 2022/07/06 18:15:47 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/07/07 17:45:03 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	getfrac(t_data *img)
 {
+	img->px = -1;
+	img->py = -1;
 	if (img->choice[0])
 		mandelbrot(img, -1, -1);
 	else if (img->choice[1])
@@ -56,4 +58,16 @@ int	getmax(int a, int b)
 	if (b > a)
 		return (b);
 	return (a);
+}
+
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }

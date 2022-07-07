@@ -6,33 +6,40 @@
 #    By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/14 17:25:28 by smokashi          #+#    #+#              #
-#    Updated: 2022/07/07 12:22:28 by smokashi         ###   ########.fr        #
+#    Updated: 2022/07/07 18:09:31 by smokashi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
 NAME = fractol
+
 SRCS = bship.c color.c julia.c mbrot.c utils.c utils2.c main.c ft_atof.c
 
-OBJS = $(SRCS:.c = .o)
+OBJS = $(SRCS:.c=.o)
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -Lmlx -lmlx -Ofast
-RM = rm -rf
 
+CFLAGS = -Wall -Wextra -Werror -Ofast
+
+MLXFLAGS = -L ./ -lmlx -Ofast
+
+RM = rm -rf
 
 all : $(NAME)
 		
-$(NAME):
-	$(CC) $(CFLAGS) -framework OpenGL -framework AppKit $(SRCS)
+$(NAME):$(OBJS)
+	make -C mlx/
+	mv mlx/libmlx.dylib ./ 
+	$(CC) $(CFLAGS) $(MLXFLAGS) -framework OpenGL -framework AppKit $(SRCS) -o $(NAME)
 
-clean :$(OBJS)
-		$(RM) $(OBJS)
+clean :
+		$(RM) $(OBJS) libmlx.dylib
+
+bonus : all
 
 fclean : clean
+		make clean -C mlx/
 		$(RM) $(NAME)
 
-re:
-		fclean all
+re: fclean all
 
-.PHONY : all clean fclean re
+.PHONY : all clean fclean re bonus
