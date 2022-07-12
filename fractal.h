@@ -6,7 +6,7 @@
 /*   By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 18:02:23 by smokashi          #+#    #+#             */
-/*   Updated: 2022/07/07 17:46:34 by smokashi         ###   ########.fr       */
+/*   Updated: 2022/07/12 11:10:26 by smokashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ typedef struct s_data
 	float	jx;
 	float	jy;
 	int		length;
-	int		width ;
-	float	zoomscale ;
+	int		width;
+	float	zoomscale;
 	int		clr;
 	float	minx;
 	float	miny;

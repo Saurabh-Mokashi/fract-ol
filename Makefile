@@ -6,7 +6,7 @@
 #    By: smokashi <smokashi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/14 17:25:28 by smokashi          #+#    #+#              #
-#    Updated: 2022/07/07 18:09:31 by smokashi         ###   ########.fr        #
+#    Updated: 2022/07/12 11:25:07 by smokashi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror -Ofast
 
-MLXFLAGS = -L ./ -lmlx -Ofast
+MLXFLAGS = -L ./ -lmlx
 
 RM = rm -rf
 
